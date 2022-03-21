@@ -1,12 +1,21 @@
-anatEvalTarget = Target.PromptTarget('Select Target for Anat/Eval')
-# Eval Int
-while(Player.GetRealSkillValue('EvalInt') < 100.0):
-    Target.Cancel()
-    Misc.Pause(50)
-    Player.UseSkill('EvalInt')
-    Target.WaitForTarget(500)
-    Target.TargetExecute(anatEvalTarget)
-    Misc.Pause(1000)
+if (Player.GetRealSkillValue('EvalInt') < 100.0 and Player.GetRealSkillValue('Anatomy') < 100.0):
+    anatEvalTarget = Target.PromptTarget('Select Target for Anat/Eval')
+    # Eval Int
+    while(Player.GetRealSkillValue('EvalInt') < 100.0):
+        Target.Cancel()
+        Misc.Pause(50)
+        Player.UseSkill('EvalInt')
+        Target.WaitForTarget(500)
+        Target.TargetExecute(anatEvalTarget)
+        Misc.Pause(1000)
+    # Anat
+    while(Player.GetRealSkillValue('Anatomy') < 100.0):
+        Target.Cancel()
+        Misc.Pause(50)
+        Player.UseSkill('Anatomy')
+        Target.WaitForTarget(500)
+        Target.TargetExecute(anatEvalTarget)
+        Misc.Pause(5000)
 # Spirit Speak
 while(Player.GetRealSkillValue('Spirit Speak') < 100.0):
     Player.UseSkill('Spirit Speak')
@@ -32,11 +41,3 @@ while(Player.GetRealSkillValue('Arms Lore') < 100.0):
 while(Player.GetRealSkillValue('Hiding') < 100.0):
     Player.UseSkill('Hiding')
     Misc.Pause(10000)
-# Anat
-while(Player.GetRealSkillValue('Anatomy') < 100.0):
-    Target.Cancel()
-    Misc.Pause(50)
-    Player.UseSkill('Anatomy')
-    Target.WaitForTarget(500)
-    Target.TargetExecute(anatEvalTarget)
-    Misc.Pause(5000)
