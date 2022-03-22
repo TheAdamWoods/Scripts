@@ -1,4 +1,4 @@
-if (Player.GetRealSkillValue('EvalInt') < 100.0 and Player.GetRealSkillValue('Anatomy') < 100.0):
+if (Player.GetRealSkillValue('EvalInt') < 100.0 or Player.GetRealSkillValue('Anatomy') < 100.0):
     anatEvalTarget = Target.PromptTarget('Select Target for Anat/Eval')
     # Eval Int
     while(Player.GetRealSkillValue('EvalInt') < 100.0):
